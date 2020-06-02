@@ -2,7 +2,7 @@ require 'bcrypt'
 
 class User < ApplicationRecord
   include BCrypt
-  
+  validates :email, :password, presence: true
   validates_uniqueness_of :email
 
   # method to verify password
@@ -12,8 +12,10 @@ class User < ApplicationRecord
 
   # method to create a new password
   def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_digest = @password
+    if new_password != ''
+      @password = Password.create(new_password)
+      self.password_digest = @password
+    end
   end
   
 end
