@@ -1,24 +1,66 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This demo shows how to set up a basic authentication strategy using the bcrypt gem.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+- Ruby 2.4.5
+- Postgresql 11 (db name: rails_auth)
 
-* System dependencies
+## Build
+```
+$ bundle install
+$ rails db:migrate
+$ rails server
+```
+## User model
+```
+require 'bcrypt'
 
-* Configuration
+class User < ApplicationRecord
+  include BCrypt
+  
+  validates_uniqueness_of :email
 
-* Database creation
+  # method to verify password
+  def password
+    @password ||= Password.new(password_digest)
+  end
 
-* Database initialization
+  # method to create a new password
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_digest = @password
+  end
+  
+end
+```
 
-* How to run the test suite
+## Creating a new user
+```
+  def create
+    @user = User.new(params.require(:user).permit(:email, :password))
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to root_url, notice: 'Thank you for signing up!'
+    else
+      render 'new'
+    end
+  end
+```
+## Creating a session (authenticating an existing user)
+```
+  def create
+    user = User.find_by_email(params[:email])
+    if user && user.password == params[:password]
+      session[:user_id] = user.id
+      redirect_to root_url, notice: 'Logged in!'
+    else
+      puts 'Email or password is incorrect!'
+      render 'new'
+    end
+  end
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Documentation
+https://github.com/codahale/bcrypt-ruby
