@@ -62,5 +62,5 @@ end
   end
 ```
 
-## Documentation
+## Gem Documentation
 https://github.com/codahale/bcrypt-ruby
