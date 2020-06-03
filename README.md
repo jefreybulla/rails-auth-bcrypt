@@ -9,6 +9,7 @@ This demo shows how to set up a basic authentication strategy using the bcrypt g
 
 ## Build
 ```
+$ createdb rails_auth
 $ bundle install
 $ rails db:migrate
 $ rails server
