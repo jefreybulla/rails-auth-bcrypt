@@ -6,7 +6,7 @@ desc "Use one time pad to encrypt a message"
 task :one_time_pad => :environment do
 
   # key (one_time_pad) must be the same length as the raw_token. 
-  # Secret must NOT be hardcoded! Use ENV veriables. 
+  # This is just a demo. In production, the secret MUST NOT be hardcoded! Use ENV variables. 
   one_time_pad ='c7021a8991e6'
   raw_token = '{user_id: 4}'
 
