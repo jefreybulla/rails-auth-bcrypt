@@ -1,8 +1,5 @@
 desc "Use one time pad to encrypt a message"
 
-# Based on this docs
-# https://apidock.com/rails/v6.0.0/ActionController/RequestForgeryProtection/xor_byte_strings
-
 task :one_time_pad => :environment do
 
   # key (one_time_pad) must be the same length as the raw_token. 
@@ -38,6 +35,9 @@ task :one_time_pad => :environment do
   puts "rt: #{rt}"
 
 end
+
+# Based on this doc
+# https://apidock.com/rails/v6.0.0/ActionController/RequestForgeryProtection/xor_byte_strings
 
 def xor_byte_strings(s1, s2) # :doc:
   s2 = s2.dup
