@@ -65,3 +65,10 @@ end
 
 ## Gem Documentation
 https://github.com/codahale/bcrypt-ruby
+
+## Using one time pad encryption
+Feel free to test the encryption with your own secret by editing /lib/task/one_time_pad.rake
+Run with:
+```
+rake one_time_pad
+```
