@@ -1,6 +1,8 @@
 # README
 
-This demo shows how to set up a basic authentication strategy using the bcrypt gem.
+This demo shows how to 
+- set up a basic authentication strategy using the bcrypt gem.
+- use One Time Pad to encrypt a message
 
 ## Requirements
 
@@ -67,8 +69,9 @@ end
 https://github.com/codahale/bcrypt-ruby
 
 ## Using one time pad encryption
-Feel free to test the encryption with your own secret by editing /lib/task/one_time_pad.rake
+Feel free to test the encryption with your own secret by editing /lib/task/one_time_pad.rake.
+
 Run with:
 ```
-rake one_time_pad
+$ rake one_time_pad
 ```
