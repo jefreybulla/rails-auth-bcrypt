@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   def index
   end
 
+  def data 
+    s = session[:user_id]
+    puts "session: #{s}"
+    render json: {city: "Baltimore" }
+  end
+
   private 
 
   def current_user
