@@ -5,9 +5,12 @@ class ApplicationController < ActionController::Base
   end
 
   def data 
-    s = session[:user_id]
-    puts "session: #{s}"
-    render json: {city: "Baltimore" }
+    if u = User.find_by_id(session[:user_id])
+      puts "session: #{u.email}"
+      render json: {user: u.email }
+    else
+      render json: {error: "no access" }
+    end
   end
 
   private 

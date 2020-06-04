@@ -13,7 +13,8 @@ module RailsAuth
     # -- all .rb files in that directory are automatically loaded.
 
   config.action_dispatch.default_headers = {
-    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Allow-Origin' => 'https://s2.ngrok.io',
+    'Access-Control-Allow-Credentials' => 'true',
     'Access-Control-Request-Method' => 'GET'
   }
 
