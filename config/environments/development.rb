@@ -51,4 +51,11 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Allow another domain to use API
+  config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => 'https://s2.ngrok.io',
+    'Access-Control-Allow-Credentials' => 'true',
+    'Access-Control-Request-Method' => 'GET'
+  }
 end
