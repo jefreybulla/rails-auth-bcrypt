@@ -86,7 +86,7 @@ Rails.application.configure do
 
   # Allow another domain to use API
   config.action_dispatch.default_headers = {
-    'Access-Control-Allow-Origin' => 'https://node-react-2020.herokuapp.com',
+    'Access-Control-Allow-Origin' => 'http://node-react-2020.herokuapp.com',
     'Access-Control-Allow-Credentials' => 'true',
     'Access-Control-Request-Method' => 'GET'
   }
