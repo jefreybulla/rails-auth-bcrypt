@@ -54,7 +54,7 @@ Rails.application.configure do
 
   # Allow another domain to use API
   config.action_dispatch.default_headers = {
-    'Access-Control-Allow-Origin' => 'https://s2.ngrok.io',
+    'Access-Control-Allow-Origin' => 'http://sub.s1.ngrok.io',
     'Access-Control-Allow-Credentials' => 'true',
     'Access-Control-Request-Method' => 'GET'
   }

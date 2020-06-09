@@ -1,2 +1,12 @@
 <br>
-<h1>This is index</h1>
+<h3>This is index</h3>
+
+<% if current_user %>
+  <% if Rails.env.development? %>
+    <a href="http://sub.s1.ngrok.io">Open React app</a>
+  <% end %>
+  <% if Rails.env.production? %>
+    <a href="http://react.rails.toro-labs.com">Open React app</a>
+  <% end %>
+
+<% end %>
