@@ -1,8 +1,12 @@
 # README
 
 This demo shows how to 
-- set up a basic authentication strategy using the bcrypt gem.
-- use One Time Pad to encrypt a message
+- Set up a basic authentication strategy using the bcrypt gem.
+- Share session cokies with another app that lives in a subdomain of this app
+- Extra: Use One Time Pad to encrypt a message
+
+## Companion app
+Use in conjuction with this [React app](https://github.com/jefreybulla/node-react) to share the Rails session cookies.
 
 ## Requirements
 
