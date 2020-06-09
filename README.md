@@ -8,6 +8,9 @@ This demo shows how to
 ## Companion app
 Use in conjuction with this [React app](https://github.com/jefreybulla/node-react) to share the Rails session cookies.
 
+## Demo URL
+http://react.rails.toro-labs.com/
+
 ## Requirements
 
 - Ruby 2.4.5
