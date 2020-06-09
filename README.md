@@ -20,6 +20,24 @@ $ bundle install
 $ rails db:migrate
 $ rails server
 ```
+
+## Setting up cookies 
+Share cookies with a subdomain (my_subdomain.rails.toro-labs.com) in config/initializers/session_store.rb
+
+```
+Rails.application.config.session_store :cookie_store, key: '_rails-auth_session', same_site: 'Strict', domain: 'rails.toro-labs.com'
+```
+## Setting up headers
+Allow a subdomain to send credectials (session cookies) in config/environments/production.rb
+```
+  config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => 'http://react.rails.toro-labs.com',
+    'Access-Control-Allow-Credentials' => 'true',
+    'Access-Control-Request-Method' => 'GET'
+  }
+```
+
+
 ## User model
 ```
 require 'bcrypt'
